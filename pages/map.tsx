@@ -62,7 +62,7 @@ if( hasError ) return (<>Ups, someting went wrong...</>)
 
   return (
     <>
-    <iframe id="showcase" width="740" height="480" src="/bundle/showcase.html?m=m72PGKzeknR&applicationKey=295ba0c0f04541318359a8e75af33043" frameborder="0" allowfullscreen allow="vr"></iframe>
+    <iframe id="showcase" width="740" height="480" src="/bundle/showcase.html?m=m72PGKzeknR&applicationKey=295ba0c0f04541318359a8e75af33043" frameBorder="0" allowFullScreen allow="vr"></iframe>
     </>
   )
 

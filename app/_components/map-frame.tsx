@@ -43,6 +43,23 @@ export const MapFrame = () => {
         );
         
         console.log('SDK успешно подключен');
+        
+        // Ждем, пока приложение будет готово к работе
+        await sdk.App.state.waitUntil(state => state.phase === sdk.App.Phase.PLAYING);
+        
+        // Добавляем тег
+        const tagId = await sdk.Tag.add({
+          label: 'Office',
+          description: 'Офисное помещение',
+          anchorPosition: { x: 0, y: 0, z: 0 }, // Позиция тега в пространстве
+          stemVector: { x: 0, y: 1, z: 0 }, // Направление стебля тега
+          color: { r: 1, g: 0, b: 0 }, // Красный цвет
+          billboard: {
+            htmlContent: '<div style="background: white; padding: 10px; border-radius: 5px;">Office</div>'
+          }
+        });
+
+        console.log('Тег успешно добавлен:', tagId);
         setIsConnecting(false);
 
       } catch (error) {
